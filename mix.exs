@@ -56,6 +56,7 @@ defmodule Tandladventures.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
+      s: ["phx.server"],
       test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
