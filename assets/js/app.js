@@ -10,6 +10,7 @@ import css from "../css/app.scss"
 //
 // Import dependencies
 //
+import "jquery"
 import "phoenix_html"
 
 // Import local files
