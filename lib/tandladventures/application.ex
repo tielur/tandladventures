@@ -6,10 +6,12 @@ defmodule Tandladventures.Application do
   use Application
 
   def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      Tandladventures.Repo,
+      worker(Tandladventures.Repo, []),
       # Start the endpoint when the application starts
       TandladventuresWeb.Endpoint
       # Starts a worker by calling: Tandladventures.Worker.start_link(arg)

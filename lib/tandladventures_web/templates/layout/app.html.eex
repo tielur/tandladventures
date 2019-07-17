@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row no-gutters">
-        <div class="col-3">
+    <div class="container-fluid p-0 h-100 bg-dark">
+      <div class="row no-gutters h-100">
+        <div class="col-2 h-100 bg-dark text-white py-2 d-flex align-items-center justify-content-center fixed-top">
           <ul class="nav flex-column">
             <li class="nav-item">
               T&L Adventures
@@ -20,73 +20,27 @@
               <a class="nav-link active" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a class="nav-link px-2" href="https://www.instagram.com/tandladventures/"><span class="fab fa-instagram"></span></a></li>
+                <li class="list-inline-item"><a class="nav-link px-2" href="https://www.youtube.com/channel/UCM5eVYdANZsMJ4eEGmqvCjA"><span class="fab fa-youtube"></span></a></li>
+              </ul>
             </li>
+
           </ul>
         </div>
-        <div class="col-9">
-          <div class="row">
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=1">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=2">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=3">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=4">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=5">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=6">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=7">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=8">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=9">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=10">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=11">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=12">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=13">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=14">
-            </div>
-            <div class="col-sm-4">
-              <img src="https://picsum.photos/320/200?random=15">
-            </div>
-          </div>
-        </div>
+        <%= unless is_nil(get_flash(@conn, :info)) do %>
+          <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <% end %>
+        <%= unless is_nil(get_flash(@conn, :error)) do %>
+          <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <% end %>
+        <%= render @view_module, @view_template, assigns %>
       </div>
     </div>
-    <main role="main" class="container">
-      <%= unless is_nil(get_flash(@conn, :info)) do %>
-        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <% end %>
-      <%= unless is_nil(get_flash(@conn, :error)) do %>
-        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <% end %>
-      <%= render @view_module, @view_template, assigns %>
-    </main>
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js")
+     %>"></script>
   </body>
 </html>
