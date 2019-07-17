@@ -1,7 +1,5 @@
-<div class="col-10 offset-2 py-2">
-<article>
-  <h1><%= @post.title %></h1>
-  <p><%= Timex.format!(@post.date, "{Mshort} {D} {YYYY}") %></p>
-  <%= raw(@post.content) %>
-</article>
+<div class="col-10 offset-2 py-2 bg-white">
+  <h1 class="display-4 text-capitalize"><%= @post.title %></h1>
+  <p class="lead"><%= @post.intro %></p>
+  stuff
 </div>
