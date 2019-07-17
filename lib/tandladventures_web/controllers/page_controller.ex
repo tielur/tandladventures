@@ -1,7 +1,9 @@
 defmodule TandladventuresWeb.PageController do
   use TandladventuresWeb, :controller
+  alias Tandladventures.Repo
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    {:ok, posts} = Repo.list()
+    render(conn, "index.html", posts: posts)
   end
 end

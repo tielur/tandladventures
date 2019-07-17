@@ -1,0 +1,17 @@
+<div class="col-10 offset-2">
+  <div class="row no-gutters">
+  <%= for post <- @posts do %>
+    <a href="<%= Routes.post_path(@conn, :show, post.slug) %>">
+    <div class="col-md-4">
+      <a href="<%= Routes.post_path(@conn, :show, post.slug) %>">
+        <img src="<%= post.title_image %>" class="img-fluid" style="width:100%">
+      </a>
+      <a href="<%= Routes.post_path(@conn, :show, post.slug) %>">
+      <div class="carousel-caption">
+        <h1><%= post.title %></h1>
+      </div>
+      </a>
+    </div>
+  <% end %>
+  </div>
+</div>

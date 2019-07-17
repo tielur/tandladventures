@@ -42,7 +42,10 @@ defmodule Tandladventures.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:earmark, "~> 1.3"},
+      {:timex, "~> 3.6"},
+      {:yamerl, "~> 0.7.0"}
     ]
   end
 

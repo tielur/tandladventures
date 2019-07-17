@@ -17,6 +17,9 @@ defmodule TandladventuresWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    # Make sure to put this line after any other routes you may already have as it will catch all requests at the first directory level.
+    get "/:slug", PostController, :show
   end
 
   # Other scopes may use custom stacks.
